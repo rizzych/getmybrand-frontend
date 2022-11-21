@@ -1,0 +1,27 @@
+@import "variables";
+
+[class*="__container"] {
+  max-width: 1101px;
+  margin: 0 auto;
+}
+
+.violette-button {
+  border: none;
+  text-align: center;
+  border-radius: $border5;
+  font-family: $Inter600;
+  color: $white;
+  background-color: $violette;
+}
+
+.unselectable {
+  pointer-events: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                         not supported by any browser */
+}
