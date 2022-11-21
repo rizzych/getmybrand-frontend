@@ -1,0 +1,23 @@
+@import "variables";
+
+.banner {
+  position: relative;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  &__image span {
+    position: absolute;
+    width: 43.5%;
+
+    font-family: $Inter800;
+    font-weight: 800;
+    font-size: $text32;
+    color: $white;
+    text-align: center;
+  }
+}

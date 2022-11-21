@@ -1,0 +1,66 @@
+@import "variables";
+
+.product {
+  width: 168px;
+  height: 100%;
+
+  &__image {
+    width: 100%;
+
+    border-radius: $border5;
+    overflow: hidden;
+  }
+
+  &__image img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+
+    margin-top: 6.5px;
+  }
+
+  &__now {
+    width: 38%;
+    height: 25px;
+
+    font-size: $text10;
+    color: $white;
+    font-family: $Inter700;
+    font-weight: 700;
+
+    margin-right: 26px;
+
+    border-radius: $border5;
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__discount {
+    font-family: $Inter700;
+    font-weight: 700;
+    font-size: $text10;
+    text-decoration: line-through;
+    color: $gray;
+  }
+
+  &__title {
+    width: 100%;
+    height: 18px;
+
+    overflow: hidden;
+
+    font-family: $Inter500;
+    font-size: $text8;
+
+    color: black;
+
+    margin-top: 11.87px;
+  }
+}

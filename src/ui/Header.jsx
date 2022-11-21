@@ -15,6 +15,13 @@ const additionalInfoList = [
     {value: 'Доставка', link: '/link'},
     {value: 'О Нашем магазине', link: '/link'},
 ]
+const categoryList = [
+    {value: 'Новинки', link: '/link'},
+    {value: 'Бренды', link: '/link'},
+    {value: 'Мужское', link: '/link'},
+    {value: 'Аксессуары', link: '/link'},
+    {value: 'Sale', link: '/link'},
+]
 export const Header = () => {
 
     return (<>
@@ -34,20 +41,20 @@ export const Header = () => {
                                 href={additionalInfo.link}>{additionalInfo.value}</a></li>))}
                     </ul>
                 </div>
-                <div className="header__lower-part lower-part">
-                    <a href="/" className="lower-part__logo">
+                <div className="header__middle-part middle-part">
+                    <a href="/" className="middle-part__logo">
                         <img className={'unselectable'} src={logo} alt="get my brand"/>
                     </a>
-                    <button className="lower-part__category-button violette-button">
+                    <button className="middle-part__category-button violette-button">
                         <div><img className={'unselectable'} src={categoryMenuIcon} alt="каталог"/>Каталог</div>
                     </button>
-                    <div className="lower-part__search search">
+                    <div className="middle-part__search search">
                         <input type="text" placeholder={'Искать на сайте'} className="search__input"/>
                         <div className="search__icon">
                             <img src={searchIcon} alt={'поиск'} className={'unselectable'}/>
                         </div>
                     </div>
-                    <div className="lower-part__user-details user-details">
+                    <div className="middle-part__user-details user-details">
                         <button className="user-details__authorize">Войти</button>
                         <div className="user-details__favourite favourite">
                             <img src={favouriteIcon} alt={"избранное"} className="favourite__icon unselectable"/>
@@ -61,7 +68,15 @@ export const Header = () => {
                         </div>
                     </div>
                 </div>
-
+                <div className="header__lower-part lower-part">
+                    <ul className="lower-part__category-list">
+                        {categoryList.map((category, index) => (
+                            <li key={index}
+                                className={category.value === 'Sale' ? 'lower-part__category-link_discount' : 'lower-part__category-link'}>
+                                <a
+                                    href={category.link}>{category.value}</a></li>))}
+                    </ul>
+                </div>
             </div>
         </header>
     </>)

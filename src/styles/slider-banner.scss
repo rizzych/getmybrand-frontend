@@ -1,0 +1,77 @@
+@import "variables";
+
+.slider {
+  &__container {
+  }
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__image {
+    width: 100%;
+    border-radius: $border5;
+    object-fit: cover;
+  }
+
+  &__slide-left {
+    position: absolute;
+    left: 0;
+
+    margin-left: 16px;
+
+    width: 42px;
+    height: 44px;
+
+  }
+
+  &__slide-right {
+    position: absolute;
+    right: 0;
+
+    margin-right: 16px;
+
+    width: 42px;
+    height: 44px;
+    // Используем одно изображение и отражаем его
+    transform: scale(-1, 1);
+  }
+}
+
+.slide-button {
+  padding: 0;
+  background: url("../images/banner-navigation-icon.png") no-repeat center;
+  border: none;
+  z-index: 1;
+}
+
+.pagination {
+  &__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  width: 140px;
+
+  display: flex;
+  justify-content: space-between;
+
+  &__element {
+    width: 36px;
+    height: 6px;
+
+    border-radius: $border3;
+    background-color: $mediumGray;
+
+    &_active {
+      width: 36px;
+      height: 6px;
+
+      border-radius: $border3;
+      background-color: $violette;
+    }
+  }
+}
