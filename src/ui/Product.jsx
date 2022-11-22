@@ -1,23 +1,26 @@
 import React from "react";
-
 import '../styles/product.scss'
 
-export const Product = (props) => {
-    const image = props.image
-    const price = props.price
-    const discount = props.discount
-    const title = props.title
+import favouriteIcon from '../images/add_to_favourite.svg'
+
+export const Product = ({item}) => {
     return (
         <>
             <div className="product">
                 <div className="product__image">
-                    <img src={image} alt={title}/>
+                    <img src={item.preview_image_link} alt={item.title}/>
+                    <div className={'visually-hidden'}>Быстрый просмотр</div>
+                    <span>-40%</span>
                 </div>
-                <div className="product__price">
-                    <div className="product__now"><span>{price.toLocaleString()} Р</span></div>
-                    <div className="product__discount"><span>{discount.toLocaleString()} Р</span></div>
+                <div className="product__price price">
+                    <div className="price__actual"><span>{item.price.toLocaleString()}</span></div>
+                    <div className="price__before"><span>{(17000).toLocaleString()}</span></div>
                 </div>
-                <div className="product__title"><span>{title}</span></div>
+                <span className="product__title">{item.title}</span>
+                <div className="product__actions">
+                    <button className="action__add-to-cart action">В корзину</button>
+                    <img src={favouriteIcon} alt="в избранное" className="action__add-to-favourite"/>
+                </div>
             </div>
         </>
     )

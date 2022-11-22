@@ -1,0 +1,129 @@
+@import "variables";
+
+.footer {
+
+  background-color: black;
+  height: 332px;
+
+  &__container {
+  }
+
+  &__main-part {
+    display: flex;
+    justify-content: space-between;
+    height: 47.5%;
+    padding-top: 40px;
+  }
+
+  &__rights-part {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 48px;
+  }
+}
+
+.main-part {
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    width: 14.5%;
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    width: 12.5%;
+  }
+
+  &__help {
+    display: flex;
+    flex-direction: column;
+    width: 13.5%;
+  }
+
+  &__payment {
+    display: flex;
+    flex-direction: column;
+    width: 11.8%;
+  }
+}
+
+.contacts {
+  &__title {
+  }
+
+  &__phone {
+  }
+
+  &__social {
+  }
+}
+
+.footer-title {
+  font-family: $Inter600;
+  font-weight: 600;
+  font-size: $text12;
+
+  color: #C4C5C9;
+
+  margin-bottom: 15px;
+}
+
+.footer-description {
+  font-family: $Inter400;
+  font-weight: 400;
+  font-size: $text12;
+
+  color: $white;
+}
+
+.phone {
+  &__number {
+    margin-bottom: 15px;
+  }
+}
+
+.social {
+  &__link {
+    margin-top: 10px;
+  }
+}
+
+.address {
+  &__title {
+  }
+
+  &__description {
+  }
+}
+
+.help {
+  &__title {
+  }
+
+  &__links {
+  }
+}
+
+.links {
+  &__item {
+    margin-bottom: 7.5px;
+  }
+}
+
+.payment {
+  &__title {
+  }
+
+  &__list {
+    width: 86%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 15px;
+  }
+}

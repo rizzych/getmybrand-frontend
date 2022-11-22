@@ -1,7 +1,7 @@
 @import "variables";
 
 [class*="__container"] {
-  max-width: 1101px;
+  padding: 0 40px;
   margin: 0 auto;
 }
 
@@ -27,5 +27,7 @@
 }
 
 .visually-hidden {
+  transition: visibility 0.3s linear, opacity 0.3s linear;
   visibility: hidden;
+  opacity: 0;
 }

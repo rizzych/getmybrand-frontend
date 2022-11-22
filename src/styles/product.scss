@@ -1,66 +1,157 @@
 @import "variables";
 
 .product {
-  width: 168px;
-  height: 100%;
+  width: 200px;
+  margin-bottom: 18px;
 
   &__image {
     width: 100%;
+    height: 230px;
 
+    position: relative;
+  }
+
+  &__image:hover > div {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__image div {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 60%;
+    height: 14.7%;
+
+    font-family: $Inter400;
+    font-size: $text10;
+    text-align: center;
+
+    background-color: $white;
     border-radius: $border5;
-    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__image img {
     width: 100%;
+    height: 100%;
+    border-radius: $border5;
     object-fit: cover;
   }
 
-  &__price {
-    display: flex;
-    align-items: center;
-
-    margin-top: 6.5px;
-  }
-
-  &__now {
-    width: 38%;
-    height: 25px;
-
-    font-size: $text10;
-    color: $white;
-    font-family: $Inter700;
-    font-weight: 700;
-
-    margin-right: 26px;
-
-    border-radius: $border5;
-    background-color: black;
-
+  &__image span {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 60px;
+    height: 24px;
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    font-family: $Inter600;
+    font-weight: 600;
+    font-size: $text12;
+
+    color: $white;
+
+    background-color: $rose;
+    border-radius: $border5;
+
+    z-index: 1;
   }
 
-  &__discount {
-    font-family: $Inter700;
-    font-weight: 700;
-    font-size: $text10;
-    text-decoration: line-through;
-    color: $gray;
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
   }
 
   &__title {
+    margin-top: 10px;
+    display: block;
     width: 100%;
-    height: 18px;
-
-    overflow: hidden;
-
+    height: 40px;
+    line-height: 15px;
     font-family: $Inter500;
-    font-size: $text8;
+    font-weight: 500;
+    font-size: $text12;
+  }
 
-    color: black;
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
-    margin-top: 11.87px;
+.price {
+  &__actual {
+    font-family: $Inter800;
+    font-weight: 800;
+    font-size: $text16;
+  }
+
+  &__before {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-family: $Inter500;
+    font-weight: 500;
+    font-size: $text10;
+
+    position: relative;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: #D20000;
+      transform: rotate(-3deg);
+    }
+  }
+}
+
+.action {
+  &__add-to-cart {
+    width: 125px;
+    height: 30px;
+
+    color: $white;
+    border-radius: $border5;
+
+    font-family: $Inter600;
+    font-weight: 600;
+    font-size: $text12;
+    border: none;
+    background-color: $productGray;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $violette;
+    }
+  }
+
+  &__add-to-favourite {
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+      filter: invert(31%) sepia(83%) saturate(7182%) hue-rotate(333deg) brightness(97%) contrast(102%);
+    }
   }
 }

@@ -1,0 +1,93 @@
+@import "variables";
+
+.popular-product {
+  width: 250px;
+  height: 410px;
+
+  &__image {
+    width: 100%;
+    border-radius: $border5;
+    overflow: hidden;
+  }
+
+  &__image img {
+    width: 100%;
+    height: 306px;
+    object-fit: cover;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+
+    margin-top: 6.5px;
+  }
+
+  &__now {
+    width: 42.4%;
+    height: 40px;
+
+    font-size: $text16;
+    color: $white;
+    font-family: $Inter700;
+    font-weight: 700;
+
+    margin-right: 26px;
+
+    border-radius: $border5;
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__discount {
+    width: 28.9%;
+    font-family: $Inter700;
+    font-weight: 700;
+    font-size: $text16;
+    text-decoration: line-through;
+    color: $gray;
+  }
+
+  &__title {
+    width: 100%;
+    height: 18px;
+
+    overflow: hidden;
+
+    font-family: $Inter500;
+    font-size: $text14;
+
+    color: black;
+
+    margin-top: 11.87px;
+  }
+}
+
+.skeleton {
+  background: #e5e5e5;
+  border-radius: $border5;
+
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: translateX(-100%);
+    background-image: linear-gradient(to left, transparent, rgba(255, 255, 255, .5), transparent);
+    animation: loading 2s infinite;
+  }
+}
+
+@keyframes loading {
+  100% {
+    transform: translateX(100%);
+  }
+}

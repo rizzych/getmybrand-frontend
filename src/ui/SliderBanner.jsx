@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay, Pagination, Navigation} from "swiper";
+import {Autoplay, Navigation, Pagination} from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -37,6 +37,7 @@ export const SliderBanner = () => {
             <div className="slider__container">
                 <div className="banner">
                     <Swiper
+                        className="banner__wrapper"
                         slidesPerView={1}
                         centeredSlides={true}
                         speed={1000}

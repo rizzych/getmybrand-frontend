@@ -1,71 +1,97 @@
 import {Header} from "./ui/Header";
 import {SliderBanner} from "./ui/SliderBanner";
-import {Product} from "./ui/Product";
+import {PopularProduct} from "./ui/PopularProduct";
 import './styles/main.scss'
 import {Banner} from "./ui/Banner";
 
-import narrowBanner from './images/narrow-banner.svg'
+import catBanner from './images/cat-banner.png'
+import axios from "axios";
+import {useEffect, useState} from "react";
+import {Product} from "./ui/Product";
+import {CategoryBanner} from "./ui/CategoryBanner";
 
-const products = [
+import categoryBanner1 from './images/category-banner-1.png'
+import categoryBanner2 from './images/category-banner-2.png'
+import {Footer} from "./ui/Footer";
+
+let data = {
+    brand_name: [],
+    page: (Math.random() + 1) * 4,
+    price_max: 999999,
+    price_min: 0,
+    size: 6,
+    sizes_filter: [],
+    type_name: []
+}
+const footerInfo = {
+    phones: ['+7(495) 654-20-25', '+7(495) 654-20-25'],
+    address: 'Москва, ул.Мира 1',
+    helps: [
+        {title: 'Как оформить заказ', link: '/'},
+        {title: 'Как выбрать размер', link: '/'},
+        {title: 'Условия доставки', link: '/'},
+        {title: 'Мои заказы', link: '/'},
+        {title: 'Возврат', link: '/'},
+    ]
+}
+const categoryBanner = [
     {
-        image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8b4e3b5c-22ea-48da-8a73-ad824372ccd2/air-max-plus-fff-ayakkab%C4%B1s%C4%B1-zkNjCn.png',
-        price: 10000,
-        discount: 2000,
-        title: 'Кроссовки AIR MAX 00000 /для спорта'
+        title: 'Футболки',
+        description: 'От мировых брендов',
+        image: categoryBanner1
     },
     {
-        image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8b4e3b5c-22ea-48da-8a73-ad824372ccd2/air-max-plus-fff-ayakkab%C4%B1s%C4%B1-zkNjCn.png',
-        price: 10000,
-        discount: 2000,
-        title: 'Кроссовки AIR MAX 00000 /для спорта'
-    },
-    {
-        image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8b4e3b5c-22ea-48da-8a73-ad824372ccd2/air-max-plus-fff-ayakkab%C4%B1s%C4%B1-zkNjCn.png',
-        price: 10000,
-        discount: 2000,
-        title: 'Кроссовки AIR MAX 00000 /для спорта'
-    },
-    {
-        image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8b4e3b5c-22ea-48da-8a73-ad824372ccd2/air-max-plus-fff-ayakkab%C4%B1s%C4%B1-zkNjCn.png',
-        price: 10000,
-        discount: 2000,
-        title: 'Кроссовки AIR MAX 00000 /для спорта'
-    },
-    {
-        image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8b4e3b5c-22ea-48da-8a73-ad824372ccd2/air-max-plus-fff-ayakkab%C4%B1s%C4%B1-zkNjCn.png',
-        price: 10000,
-        discount: 2000,
-        title: 'Кроссовки AIR MAX 00000 /для спорта'
-    },
-    {
-        image: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8b4e3b5c-22ea-48da-8a73-ad824372ccd2/air-max-plus-fff-ayakkab%C4%B1s%C4%B1-zkNjCn.png',
-        price: 10000,
-        discount: 2000,
-        title: 'Кроссовки AIR MAX 00000 /для спорта'
+        title: 'Футболки',
+        description: 'От мировых брендов',
+        image: categoryBanner2
     }
 ]
-
 const banner = {
-    image: narrowBanner,
-    title: 'Акция скоро закончится\n' +
-        'ПОКУПАЙ СЕЙЧАС'
+    image: catBanner,
+    title: ''
 }
 
+const getItems = async () => axios.post('https://mothersasg.lowhost.ru/items', data, {
+    headers: {'Content-Type': 'application/json'}
+})
+
 function App() {
+    const [items, setItems] = useState([])
+    useEffect(() => {
+        getItems().then((response) => setItems(response.data.data))
+    }, [])
+
+    console.log(items)
+
     return (
         <>
             <Header/>
-            <SliderBanner/>
+            <div className="slider-banner__wrapper">
+                <SliderBanner/>
+            </div>
             <div className="products__container products">
                 <h1 className="products__title title">Популярное</h1>
                 <div className="products__wrapper">
-                    {products.map((product, index) => (
-                        <Product key={index} image={product.image} price={product.price} discount={product.discount}
-                                 title={product.title}/>
-                    ))}
+                    {items.length > 0 ? items.map((item, index) => (
+                        <PopularProduct key={index} data={item}/>
+                    )) : [1, 2, 3, 4, 5, 6].map(() => <PopularProduct/>)}
                 </div>
             </div>
             <div className="banner__container"><Banner data={banner}/></div>
+            <div className="products__container products">
+                <h1 className="products__title title">Скидки</h1>
+                <div className="products__wrapper">
+                    {items.length > 0 ? items.map((item, index) => (
+                        <Product key={index} item={item}/>
+                    )) : [1, 2, 3, 4, 5, 6].map(() => <PopularProduct/>)}
+                </div>
+            </div>
+
+            <div className="products__container products">
+                <h1 className="products__title title">FRIDAY 13</h1>
+                <CategoryBanner banner={categoryBanner}/>
+            </div>
+            <Footer footerInfo={footerInfo}/>
         </>
     );
 }

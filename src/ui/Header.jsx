@@ -46,7 +46,8 @@ export const Header = () => {
                         <img className={'unselectable'} src={logo} alt="get my brand"/>
                     </a>
                     <button className="middle-part__category-button violette-button">
-                        <div><img className={'unselectable'} src={categoryMenuIcon} alt="каталог"/>Каталог</div>
+                        <div><img className={'unselectable'} src={categoryMenuIcon} alt="каталог"/><span>Каталог</span>
+                        </div>
                     </button>
                     <div className="middle-part__search search">
                         <input type="text" placeholder={'Искать на сайте'} className="search__input"/>
@@ -56,15 +57,16 @@ export const Header = () => {
                     </div>
                     <div className="middle-part__user-details user-details">
                         <button className="user-details__authorize">Войти</button>
-                        <div className="user-details__favourite favourite">
-                            <img src={favouriteIcon} alt={"избранное"} className="favourite__icon unselectable"/>
-                            <span className="favourite__item-count">0</span>
-                        </div>
-
-                        <div className="user-details__shopping-cart shopping-cart">
-                            <img src={shoppingCartIcon} alt={"корзина товаров"}
-                                 className="shopping-cart__icon unselectable"/>
-                            <span className="shopping-cart__item-count">9</span>
+                        <div className="user-details__actions-wrapper">
+                            <div className="user-details__favourite favourite">
+                                <img src={favouriteIcon} alt={"избранное"} className="favourite__icon unselectable"/>
+                                <span className="favourite__item-count">0</span>
+                            </div>
+                            <div className="user-details__shopping-cart shopping-cart">
+                                <img src={shoppingCartIcon} alt={"корзина товаров"}
+                                     className="shopping-cart__icon unselectable"/>
+                                <span className="shopping-cart__item-count">9</span>
+                            </div>
                         </div>
                     </div>
                 </div>
