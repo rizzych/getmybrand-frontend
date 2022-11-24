@@ -18,12 +18,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
-
-  &__title {
-    font-family: $Inter800;
-    color: $mediumBlack;
-    margin-bottom: 29px;
-  }
 }
 
 .banner {
@@ -32,5 +26,24 @@
   }
 }
 
+.common-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vertical-banner {
+  padding-left: 33px;
+
+  &__wrapper {
+  }
+}
+
 .title {
+  font-family: $Inter800;
+  color: $mediumBlack;
+  margin-bottom: 29px;
+}
+
+.footer-wrapper{
+  margin-top: 45px;
 }

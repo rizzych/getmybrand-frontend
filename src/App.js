@@ -87,11 +87,31 @@ function App() {
                 </div>
             </div>
 
-            <div className="products__container products">
+            <div className="banner__container products">
                 <h1 className="products__title title">FRIDAY 13</h1>
                 <CategoryBanner banner={categoryBanner}/>
             </div>
-            <Footer footerInfo={footerInfo}/>
+            <div className="banner__container"><Banner data={banner}/></div>
+
+            <div className="products__container products">
+                <h1 className="products__title title">Действует акция 11.11</h1>
+                <div className="common-wrapper">
+                    <div className="products__wrapper">
+                        {items.length > 0 ? items.map((item, index) => (
+                            <>
+                                <Product key={index} item={item}/>
+                            </>
+                        )) : [1, 2, 3, 4, 5, 6].map(() => <PopularProduct/>)}
+                    </div>
+                    {/*<div className="vertical-banner__wrapper">*/}
+                    {/*    <VerticalBanner/>*/}
+                    {/*</div>*/}
+                </div>
+            </div>
+            <div className="footer-wrapper">
+                <Footer footerInfo={footerInfo}/>
+            </div>
+
         </>
     );
 }

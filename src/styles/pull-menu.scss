@@ -1,0 +1,64 @@
+@import "variables";
+
+.pull-menu {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+  position: absolute;
+  opacity: 1;
+
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+  background-color: #00000090;
+
+  &__background {
+    width: 60vw;
+    height: 100vh;
+    background-color: white;
+    transition: margin .5s;
+    margin: 0 0 0 -100vw;
+  }
+
+  &__background text {
+    font-family: $Inter800;
+    color: $mediumBlack;
+    font-size: $text32;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    margin: 20px 0;
+
+  }
+
+  &__image {
+    width: 40vw;
+
+  }
+
+  &__image img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: $border5;
+  }
+}
+
+.is-open {
+  margin-left: 0;
+}
+
+.bg-visibility{
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+}

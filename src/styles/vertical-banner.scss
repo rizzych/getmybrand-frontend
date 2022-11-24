@@ -1,0 +1,56 @@
+@import "variables";
+
+.vertical-banner {
+  display: inline-block;
+  &__image {
+    width: 341px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image img {
+    width: 100%;
+    height: 82vh;
+    object-fit: cover;
+
+    border-radius: $border5;
+  }
+
+  &__image p {
+    position: absolute;
+    width: 63.4%;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, 50%);
+
+    font-family: $Inter900;
+    font-weight: 900;
+    font-size: $text32;
+    text-align: center;
+
+    color: $white;
+  }
+
+  &__button {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+
+    width: 70%;
+    height: 40px;
+
+    background: $white;
+    border-radius: $border5;
+
+    border: none;
+    transform: translate(-50%, 50%);
+  }
+
+  &__button span {
+    font-family: $Inter600;
+    font-weight: 600;
+    font-size: $text10;
+    text-align: center;
+  }
+}

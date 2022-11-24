@@ -3,23 +3,25 @@
 .footer {
 
   background-color: black;
-  height: 332px;
+  height: 560px;
 
   &__container {
+  overflow: hidden;
   }
 
   &__main-part {
     display: flex;
     justify-content: space-between;
     height: 47.5%;
-    padding-top: 40px;
+    padding-top: 96px;
   }
 
   &__rights-part {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 48px;
+    margin-top: 70px;
+    font-size: $text14 !important;
   }
 }
 
@@ -27,19 +29,19 @@
   &__contacts {
     display: flex;
     flex-direction: column;
-    width: 14.5%;
+    width: 19%;
   }
 
   &__address {
     display: flex;
     flex-direction: column;
-    width: 12.5%;
+    width: 13.5%;
   }
 
   &__help {
     display: flex;
     flex-direction: column;
-    width: 13.5%;
+    width: 18.5%;
   }
 
   &__payment {
@@ -63,24 +65,24 @@
 .footer-title {
   font-family: $Inter600;
   font-weight: 600;
-  font-size: $text12;
+  font-size: $text18;
 
   color: #C4C5C9;
 
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .footer-description {
   font-family: $Inter400;
   font-weight: 400;
-  font-size: $text12;
+  font-size: $text14;
 
   color: $white;
 }
 
 .phone {
   &__number {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 }
 
@@ -108,7 +110,7 @@
 
 .links {
   &__item {
-    margin-bottom: 7.5px;
+    margin-bottom: 28px;
   }
 }
 
